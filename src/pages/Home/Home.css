@@ -1,0 +1,235 @@
+/* Home Container */
+.home {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 8%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    max-width: 1000px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #45a29e, #66fcf1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    color: #cfcfcf;
+    line-height: 1.8;
+}
+
+.hero form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero input {
+    padding: 12px 20px;
+    width: 280px;
+    max-width: 90%;
+    border: 2px solid #45a29e;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.hero input::placeholder {
+    color: #aaa;
+}
+
+.hero input:focus {
+    border-color: #66fcf1;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.hero button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #45a29e, #66fcf1);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero button:hover {
+    background: linear-gradient(90deg, #66fcf1, #45a29e);
+    transform: scale(1.05);
+}
+
+/* Crypto Table */
+.crypto-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table Row */
+.table-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr; /* More space for market cap */
+    min-width: 700px; /* Prevents cutting off columns */
+    padding: 12px 18px;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.table-layout.header {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.table-layout:hover:not(.header) {
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+}
+
+/* Coin Info */
+.coin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.marketcap {
+    text-align: right;
+    white-space: nowrap; /* Prevents breaking the number */
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .hero form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .hero button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .crypto-table {
+    overflow-x: auto;
+  }
+
+  .table-layout {
+    min-width: 550px; /* reduced for smaller devices */
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .coin-info span {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .coin-info span {
+    font-size: 12px;
+  }
+
+  .table-layout {
+    min-width: 500px; /* ensures full content on scroll */
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .table-layout p {
+    font-size: 12px;
+  }
+
+  .marketcap {
+    display: none; /* hide if space is too tight */
+  }
+
+  .crypto-table {
+    padding: 0 5px;
+    overflow-x: auto;
+  }
+
+  .coin-info img {
+    width: 20px;
+    height: 20px;
+  }
+}

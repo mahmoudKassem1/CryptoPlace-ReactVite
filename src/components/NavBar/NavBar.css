@@ -1,0 +1,226 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 5%;
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: #ddd;
+    border-bottom: 2px solid #3c3c3c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+.logo {
+    width: max(12vw, 120px);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #45a29e;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.navbar ul li a:hover {
+    color: #45a29e;
+    font-weight: 500;
+}
+
+.navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navright select {
+    padding: 8px 12px;
+    background: #2c3e50;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navright select:hover {
+    background: #34495e;
+}
+
+
+.navright button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #45a29e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navright button:hover {
+    background: #66fcf1;
+    transform: scale(1.05);
+}
+
+.navright button img {
+    width: 16px;
+}
+
+.navright a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #45a29e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.navright a:hover {
+    background: #66fcf1;
+    transform: scale(1.05);
+}
+
+.navright a img {
+    width: 16px;
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    flex: 1 1 100%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex: 1 1 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navright {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 4%;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+  }
+
+  .navbar ul {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 20px;
+  }
+
+  .navright {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .navright select,
+  .navright button,
+  .navright a {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .navright {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .navright select,
+  .navright button,
+  .navright a {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,122 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 40px 20px;
+}
+
+.signup-form {
+  background: rgba(30, 30, 30, 0.95);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+  color: #eee;
+  animation: fadeIn 0.6s ease-in-out;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.signup-form:hover {
+  transform: translateY(-5px);
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #66fcf1;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #c5c6c7;
+}
+
+.form-group input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #2c3e50;
+  color: #fff;
+  outline: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  background: #34495e;
+  box-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
+}
+
+.form-group small {
+  color: #ff4d4f;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #45a29e;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.signup-form button:hover {
+  background: #66fcf1;
+  transform: scale(1.03);
+  color: #000;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .signup-form h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .signup-form button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
